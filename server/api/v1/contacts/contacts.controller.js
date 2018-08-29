@@ -31,7 +31,7 @@ exports.index = function (req, res) {
           flag = false
         })
 
-        res.status(200).json({ status: 'success', payload: resp })
+        res.status(200).json({ contacts: resp })
       })
       .catch(err => {
         logger.serverLog(TAG, `Inernal Server Error ${JSON.stringify(err)}`)
