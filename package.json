@@ -4,7 +4,7 @@
   "description": "",
   "main": "server/app.js",
   "scripts": {
-    "start": "cross-env DEBUG=whatsappsimulator:* NODE_ENV=development nodemon --trace-sync-io server/app.js",
+    "start": "cross-env DEBUG=whatsappsimulator:* NODE_ENV=development nodemon --trace-warnings server/app.js",
     "debug": "cross-env DEBUG=express:router:route,express:application,whatsapp:* NODE_ENV=development nodemon --trace-sync-io server/app.js",
     "lint": "echo 'Pre-commit checks...' && standard --fix && echo \"No code style errors found.\"",
     "test": "echo \"TDD is not implemented yet \" && exit 0"
@@ -31,6 +31,7 @@
     "debug": "^2.6.8",
     "errorhandler": "^1.5.0",
     "express": "^4.16.3",
+    "express-jsonschema": "^1.1.6",
     "express-jwt": "^5.3.1",
     "helmet": "^3.13.0",
     "jsonwebtoken": "^8.3.0",
@@ -57,8 +58,7 @@
     "delay": "1000"
   },
   "standard": {
-    "ignore": [
-    ],
+    "ignore": [],
     "parser": "babel-eslint"
   }
 }

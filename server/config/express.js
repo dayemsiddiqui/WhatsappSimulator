@@ -15,6 +15,7 @@ const path = require('path')
 const helmet = require('helmet')
 const passport = require('passport')
 const config = require('./environment/index')
+const utility = require('./../components/utility')
 
 module.exports = function (app) {
   const env = app.get('env')
@@ -25,6 +26,9 @@ module.exports = function (app) {
      */
 
   app.use(compression())
+
+  // For validationSchema errors
+  app.use(utility.JSONSchemaMiddleWare)
 
   app.use(bodyParser.urlencoded({ extended: true }))
   app.use(bodyParser.json())
