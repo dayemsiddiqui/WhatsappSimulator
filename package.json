@@ -1,0 +1,64 @@
+{
+  "name": "whatsappsimulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "cross-env DEBUG=whatsappsimulator:* NODE_ENV=development nodemon --trace-sync-io server/app.js",
+    "debug": "cross-env DEBUG=express:router:route,express:application,whatsapp:* NODE_ENV=development nodemon --trace-sync-io server/app.js",
+    "lint": "echo 'Pre-commit checks...' && standard --fix && echo \"No code style errors found.\"",
+    "test": "echo \"TDD is not implemented yet \" && exit 0"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dayemsiddiqui/WhatsappSimulator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dayemsiddiqui/WhatsappSimulator/issues"
+  },
+  "homepage": "https://github.com/dayemsiddiqui/WhatsappSimulator",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "composable-middleware": "^0.3.0",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.8",
+    "errorhandler": "^1.5.0",
+    "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
+    "helmet": "^3.13.0",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.2.8",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1",
+    "socketio-jwt": "^4.5.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.18.3",
+    "pre-commit": "^1.2.2",
+    "standard": "^11.0.1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "unused/*"
+    ],
+    "delay": "1000"
+  },
+  "standard": {
+    "ignore": [
+    ],
+    "parser": "babel-eslint"
+  }
+}

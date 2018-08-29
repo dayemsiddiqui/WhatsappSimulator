@@ -1,3 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Node template
 # Logs
 logs
 *.log
@@ -29,14 +31,18 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (https://nodejs.org/api/addons.html)
+# Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
 # Dependency directories
 node_modules/
 jspm_packages/
+client/public/js/bundle.js
+client/public/js/bundle.js.map
+client/public/dist/
+server/api/backdoor/my-file.csv
 
-# TypeScript v1 declaration files
+# Typescript v1 declaration files
 typings/
 
 # Optional npm cache directory
@@ -57,5 +63,12 @@ typings/
 # dotenv environment variables file
 .env
 
-# next.js build output
-.next
+# ides
+.idea/
+.vscode/
+broadcastFiles/
+
+# .DS_Store file often screated by Mac OS
+.DS_Store
+
+package-lock.json
