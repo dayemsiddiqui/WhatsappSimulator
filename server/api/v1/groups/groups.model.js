@@ -6,6 +6,7 @@ let groupSchema = new Schema({
   admins: [String],
   creator: String,
   participants: [String],
+  invite: false,
   createtime: { type: Date, default: Date.now }
 })
 
