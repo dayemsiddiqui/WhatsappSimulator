@@ -15,10 +15,7 @@ exports.addAdmin = function (req, res) {
   Groups.findOne({_id: groupId})
     .exec()
     .then(group => {
-      newAdmins.map((admin) => {
-        group.admins.push(admin)
-      })
-
+      group.admins = _.union(group.admins, newAdmins)
       group.save(function (err) {
         if (err) {
           logger.serverLog(TAG, `Internal Server Error ${JSON.stringify(err)}`)
@@ -49,7 +46,7 @@ exports.deleteAdmin = function (req, res) {
   Groups.findOne({_id: groupId})
     .exec()
     .then(group => {
-      group.admins = _.difference(_.union(group.admins, newAdmins), _.intersection(group.admins, newAdmins))
+      group.admins = _.difference(group.admins, newAdmins)
 
       group.save(function (err) {
         if (err) {
